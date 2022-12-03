@@ -1,0 +1,26 @@
+resource "proxmox_vm_qemu" "proxmox_master" {
+  for_each = var.vm_list
+
+  name        = each.key
+  target_node = var.pm_node_name
+  clone       = each.value.
+  # os_type     = "cloud-init"
+  agent       = 1
+  memory      = 
+  cores       = 
+  disk {
+    slot = 0
+    size = 
+    type = var.master_disk_type
+    storage = var.master_disk_location
+    iothread = 1
+  }
+  ipconfig0 = "ip=${var.master_ips[0]}/${var.networkrange},gw=${}"
+  lifecycle {
+    ignore_changes = [
+      ciuser,
+      sshkeys,
+      network
+    ]
+  }
+}

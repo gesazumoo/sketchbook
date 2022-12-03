@@ -1,0 +1,11 @@
+PVE_IP = 192.168.191.187
+USER = root
+PASSWD = 12345678
+PUBKEY_PATH = ./root_rsa.pub
+
+# 1. proxmox shell 붙어서 ls 출력
+attach_proxmox_shell:
+	echo $(PVE_IP)
+	ssh-copy-id -i $() $(USER)@$(PVE_IP)
+	echo $(PASSWD)
+	whoami
