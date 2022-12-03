@@ -2,20 +2,27 @@
 variable "vm_list" {
   type = map(map(string))
   default = {
-    test1 = {
-      template = "base"
+    nginx = {
+      template = "baseubuntu"
       cores = 2
       memory = "2048"
-      disksize = "32G"
-      gw = "192.168.123.1"
-    },
-    test2 = {
-      template = "base"
-      cores = 4
-      memory = "4096"
       disksize = "64G"
       gw = "192.168.123.1"
-    }
+    },
+    # frontend = {
+    #   template = "base"
+    #   cores = 2
+    #   memory = "4096"
+    #   disksize = "32G"
+    #   gw = "192.168.123.1"
+    # },
+    # appsmith = {
+    #   template = "base"
+    #   cores = 4
+    #   memory = "4096"
+    #   disksize = "64G"
+    #   gw = "192.168.123.1"
+    # }
   }
 }
 
