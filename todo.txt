@@ -27,3 +27,6 @@ vm list : nginx, frontend(간단한 화면), appsmith, minio, postgres
 
 
 일단 띄우기. -> 엔서블에서 호스트명 변경 및 아이피 고정
+
+
+템플릿 : proxmox root shell에 있는 gesazumoo계정으로 

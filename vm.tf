@@ -6,21 +6,21 @@ resource "proxmox_vm_qemu" "proxmox_master" {
   clone       = each.value.template
   # full_clone  = false
   # clone_wait  = 0
-  agent       = 1
-  memory      = each.value.memory
-  cores       = each.value.cores
+  # agent       = 1
+  # memory      = each.value.memory
+  # cores       = each.value.cores
   
-  disk {
-    size     = each.value.disksize
-    type     = var.master_disk_type
-    storage  = var.master_disk_location
-  }
-  ipconfig0 = "ip=${var.master_ips[0]}/${var.networkrange},gw=${each.value.gw}"
-  lifecycle {
-    ignore_changes = [
-      ciuser,
-      sshkeys,
-      network
-    ]
-  }
+  # disk {
+  #   size     = each.value.disksize
+  #   type     = var.master_disk_type
+  #   storage  = var.master_disk_location
+  # }
+  ipconfig0 = "ip=192.168.123.161/24,gw=${each.value.gw}"
+  # lifecycle {
+  #   ignore_changes = [
+  #     ciuser,
+  #     sshkeys,
+  #     network
+  #   ]
+  # }
 }
