@@ -5,9 +5,10 @@ variable "vm_list" {
     nginx = {
       template = "baseubuntu"
       cores = 2
-      memory = "2048"
+      memory = "4092"
       disksize = "64G"
       gw = "192.168.123.1"
+      ip = "192.168.123.177/26"
     },
     # frontend = {
     #   template = "base"

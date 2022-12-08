@@ -1,26 +1,8 @@
 resource "proxmox_vm_qemu" "proxmox_master" {
-  for_each = var.vm_list
+  name        = "terraformvm"
+  target_node = "pve"
+  vmid = 11
+  desc = "this is desc"
+  clone       = "baseubuntu"
 
-  name        = each.key
-  target_node = var.pm_node_name
-  clone       = each.value.template
-  # full_clone  = false
-  # clone_wait  = 0
-  # agent       = 1
-  # memory      = each.value.memory
-  # cores       = each.value.cores
-  
-  # disk {
-  #   size     = each.value.disksize
-  #   type     = var.master_disk_type
-  #   storage  = var.master_disk_location
-  # }
-  ipconfig0 = "ip=192.168.123.161/24,gw=${each.value.gw}"
-  # lifecycle {
-  #   ignore_changes = [
-  #     ciuser,
-  #     sshkeys,
-  #     network
-  #   ]
-  # }
 }
