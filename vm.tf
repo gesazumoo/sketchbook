@@ -18,9 +18,6 @@ resource "proxmox_vm_qemu" "cloudinit_test2" {
     model  = "virtio"
   }
 
-  # define_connection_info = true
-  # os_network_config      = <<EOF
-  # EOF
   cores                  = 3
   sockets                = 1
   memory                 = 2560

@@ -4,25 +4,21 @@ variable "vm_list" {
   default = {
     nginx = {
       template = "baseubuntu"
-      cores = 2
-      memory = "4092"
-      disksize = "64G"
-      gw = "192.168.123.1"
-      ip = "192.168.123.177/26"
+      cores    = 1
+      memory   = "4096"
+      harddisk = "32G"
     },
     # frontend = {
-    #   template = "base"
+    #   template = "baseubuntu"
     #   cores = 2
     #   memory = "4096"
-    #   disksize = "32G"
-    #   gw = "192.168.123.1"
+    #   harddisk = "32G"
     # },
     # appsmith = {
-    #   template = "base"
-    #   cores = 4
+    #   template = "baseubuntu"
+    #   cores = 2
     #   memory = "4096"
-    #   disksize = "64G"
-    #   gw = "192.168.123.1"
+    #   harddisk = "32G"
     # }
   }
 }
@@ -60,7 +56,7 @@ variable "master_disk_location" {
 variable "master_ips" {
   description = "List of ip addresses for master nodes"
   type        = list(string)
-  default     = [
+  default = [
     "a.a.a.a",
     "b.b.b.b",
     "c.c.c.c",
@@ -69,5 +65,5 @@ variable "master_ips" {
 
 variable "networkrange" {
   description = "Enter as 8,16,22,24,etc. hint: 10.0.0.0/8"
-  default = "10.0.0.0/8"
+  default     = "10.0.0.0/8"
 }

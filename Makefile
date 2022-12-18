@@ -4,13 +4,18 @@ USER = root
 PUBKEY_PATH = ./root_rsa.pub
 KEY_PATH = ./root_rsa
 
-.PHONY: install_terraform
-intall_terraform:
-	brew install hashicorp/tap/terraform
+VM_USER = root
 
-copy_ssh_key:
-	ssh-copy-id -i $(PUBKEY_PATH) $(USER)@$(PVE_IP)
-# todo 비밀번호를 입력 안하게 하고싶음. pem파일로 하는거임?
+# .PHONY: install_terraform
+# intall_terraform:
+# 	brew install hashicorp/tap/terraform
+
+# apply:
+# 	terraform apply
+
+# copy_ssh_key:
+# 	ssh-copy-id -i $(PUBKEY_PATH) $(USER)@$(PVE_IP)
+
 
 .PHONY: install_ansible
 install_ansible:
@@ -19,5 +24,15 @@ install_ansible:
 	ssh $(USER)@$(PVE_IP) -i $(KEY_PATH) "ansible --version"
 
 
-apply:
-	terraform apply
+
+.PHONY: ansible_prefix
+ansible_prefix:
+	ssh $(USER)@$(PVE_IP) -i $(KEY_PATH) "ssh-keygen
+	ssh $(USER)@$(PVE_IP) -i $(KEY_PATH) "ssh-copy-id -i ~/.ssh/id_rsa.pub gesazumoo@192.168.123.119"
+
+.PHONY: ansible_exec
+ansible_exec:
+	scp -r -i $(KEY_PATH) ./ansible/. $(USER)@$(PVE_IP):/opt/ansible
+	
+
+

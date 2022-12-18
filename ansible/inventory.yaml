@@ -1,4 +1,5 @@
 vmlist:
   hosts:
     dev-nginx:
-      ansible_host: 192.168.123.16
+      ansible_user: gesazumoo
+      ansible_host: 192.168.123.85
