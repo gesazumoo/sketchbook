@@ -1,13 +1,14 @@
 resource "proxmox_vm_qemu" "cloudinit_test2" {
-  name        = "tftest2"
-  desc        = "tf description"
+  for_each = var.vm_list
+
+  name        =  each.key
   target_node = "pve"
   os_type     = "ubuntu"
-  clone       = "baseubuntu"
+  clone       = each.value.template
 
   disk {
     type    = "scsi"
-    size    = "40G"
+    size    = each.value.harddisk
     storage = "local-lvm"
   }
 
@@ -18,9 +19,9 @@ resource "proxmox_vm_qemu" "cloudinit_test2" {
     model  = "virtio"
   }
 
-  cores                  = 3
+  cores                  = each.value.cores
   sockets                = 1
-  memory                 = 2560
+  memory                 = each.value.memory
 
 # 그냥 올리고 ip는 수동으로...
 # 템플릿에서 gesazumoo 계정 추가된걸로 변경하고

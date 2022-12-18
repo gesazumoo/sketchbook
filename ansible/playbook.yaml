@@ -1,7 +1,13 @@
-- name: My first play
-  hosts: dev-nginx
+- name: Setup vm
+  hosts: vmlist
   become: true
   tasks:
     - name: update hostnames
       shell: |
-        sudo hostnamectl set-hostname SSSSSS
+        sudo hostnamectl set-hostname {{ inventory_hostname }}
+
+    # - name: install docker
+
+    # - name: set
+        # install docker & docker-compose
+        # 각 브이엠에 맞는 docker-compose 파일 전달 후 docker compose up!\

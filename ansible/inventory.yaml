@@ -1,5 +1,11 @@
 vmlist:
   hosts:
-    dev-nginx:
+    nginx:
+      ansible_user: gesazumoo
+      ansible_host: 192.168.123.184
+    frontend:
+      ansible_user: gesazumoo
+      ansible_host: 192.168.123.184
+    appsmith:
       ansible_user: gesazumoo
       ansible_host: 192.168.123.184

@@ -8,18 +8,18 @@ variable "vm_list" {
       memory   = "4096"
       harddisk = "32G"
     },
-    # frontend = {
-    #   template = "baseubuntu"
-    #   cores = 2
-    #   memory = "4096"
-    #   harddisk = "32G"
-    # },
-    # appsmith = {
-    #   template = "baseubuntu"
-    #   cores = 2
-    #   memory = "4096"
-    #   harddisk = "32G"
-    # }
+    frontend = {
+      template = "baseubuntu"
+      cores = 2
+      memory = "4096"
+      harddisk = "32G"
+    },
+    appsmith = {
+      template = "baseubuntu"
+      cores = 1
+      memory = "4096"
+      harddisk = "32G"
+    }
   }
 }
 
