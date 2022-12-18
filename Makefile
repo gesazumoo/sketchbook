@@ -33,6 +33,6 @@ ansible_prefix:
 .PHONY: ansible_exec
 ansible_exec:
 	scp -r -i $(KEY_PATH) ./ansible/. $(USER)@$(PVE_IP):/opt/ansible
-	
+	ssh $(USER)@$(PVE_IP) -i $(KEY_PATH) "ansible-playbook -v /opt/ansible/playbook.yaml -i /opt/ansible/inventory.yaml -e ansible_sudo_pass=12345678"
 
 
