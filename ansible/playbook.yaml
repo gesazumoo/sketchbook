@@ -6,8 +6,6 @@
       shell: |
         sudo hostnamectl set-hostname {{ inventory_hostname }}
 
-    # - name: install docker
+# - name: Setup docker-compose 
 
-    # - name: set
-        # install docker & docker-compose
-        # 각 브이엠에 맞는 docker-compose 파일 전달 후 docker compose up!\
+# 각 브이엠에 맞는 docker-compose, docker 파일 전달 후 docker compose up!\

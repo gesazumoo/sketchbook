@@ -24,7 +24,5 @@ resource "proxmox_vm_qemu" "cloudinit_test2" {
   memory                 = each.value.memory
 
 # 그냥 올리고 ip는 수동으로...
-# 템플릿에서 gesazumoo 계정 추가된걸로 변경하고
-# docker, docker compose 설치.
 # ansible로 ect/opt아래에 docker-compose.yml 파일 만들기
 }

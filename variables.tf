@@ -3,19 +3,19 @@ variable "vm_list" {
   type = map(map(string))
   default = {
     nginx = {
-      template = "baseubuntu"
+      template = "dockerbase"
       cores    = 1
       memory   = "4096"
       harddisk = "32G"
     },
     frontend = {
-      template = "baseubuntu"
+      template = "dockerbase"
       cores = 2
       memory = "4096"
       harddisk = "32G"
     },
     appsmith = {
-      template = "baseubuntu"
+      template = "dockerbase"
       cores = 1
       memory = "4096"
       harddisk = "32G"

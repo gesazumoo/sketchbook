@@ -1,11 +1,11 @@
+# ssh-copy-id gesazumoo@192.168.123.14
+# ansible-inventory -i inventory.yaml --list
+
 vmlist:
   hosts:
-    nginx:
-      ansible_user: gesazumoo
-      ansible_host: 192.168.123.184
     frontend:
       ansible_user: gesazumoo
-      ansible_host: 192.168.123.184
+      ansible_host: 192.168.123.12
     appsmith:
       ansible_user: gesazumoo
-      ansible_host: 192.168.123.184
+      ansible_host: 192.168.123.14

@@ -1,1 +1,4 @@
 .history/
+
+terraform-plugin-proxmox.log
+terraform.tfstate.backup
